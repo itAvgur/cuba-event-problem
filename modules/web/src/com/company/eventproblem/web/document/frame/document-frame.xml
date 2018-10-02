@@ -23,16 +23,7 @@
             <rows datasource="documentDs"/>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
-                          alwaysVisible="true">
-                <button id="createBtn"
-                        action="income.create"/>
-                <button id="editBtn"
-                        action="income.edit"/>
-                <button id="removeBtn"
-                        action="income.remove"/>
-                <button id="refreshBtn"
-                        action="income.refresh"/>
-            </buttonsPanel>
+                          alwaysVisible="true"/>
         </table>
     </layout>
 </window>
