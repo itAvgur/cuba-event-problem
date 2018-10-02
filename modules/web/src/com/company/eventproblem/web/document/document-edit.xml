@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.eventproblem.web.document.DocumentEdit"
+        datasource="documentDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.eventproblem.web.document">
+    <dsContext>
+        <datasource id="documentDs"
+                    class="com.company.eventproblem.entity.Document"
+                    view="_local"/>
+    </dsContext>
+    <actions>
+        <action id="onOkBtnClick"
+                invoke="onOkBtnClick"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="documentDs">
+            <column width="250px">
+                <field property="someText"/>
+            </column>
+        </fieldGroup>
+        <buttonsPanel>
+            <button id="buttonOk"
+                    action="onOkBtnClick"
+                    caption="Ok"
+                    description="OK"/>
+            <button id="buttonCancel"
+                    action="windowClose"
+                    caption="Cancel"
+                    description="Cancel"/>
+        </buttonsPanel>
+    </layout>
+</window>

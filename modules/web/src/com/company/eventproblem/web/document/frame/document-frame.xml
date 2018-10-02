@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        class="com.company.eventproblem.web.document.frame.DocumentFrame"
+        messagesPack="com.company.eventproblem.web.document">
+    <dsContext>
+        <collectionDatasource id="documentDs"
+                              class="com.company.eventproblem.entity.Document"
+                              view="_local"/>
+    </dsContext>
+    <layout expand="documentsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="documentsTable"
+                datasource="documentDs">
+            <properties include=".*"/>
+        </filter>
+        <table id="documentsTable"
+               multiselect="true"
+               width="100%">
+            <columns>
+                <column id="someText"/>
+            </columns>
+            <rows datasource="documentDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="income.create"/>
+                <button id="editBtn"
+                        action="income.edit"/>
+                <button id="removeBtn"
+                        action="income.remove"/>
+                <button id="refreshBtn"
+                        action="income.refresh"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

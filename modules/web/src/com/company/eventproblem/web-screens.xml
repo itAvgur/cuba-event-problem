@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <screen id="eventproblem$Document.browse"
+            template="com/company/eventproblem/web/document/document-browse.xml"/>
+    <screen id="eventproblem$Document.edit"
+            template="com/company/eventproblem/web/document/document-edit.xml"/>
+    <screen id="Document.frame"
+            template="/com/company/eventproblem/web/document/frame/document-frame.xml"/>
+</screen-config>

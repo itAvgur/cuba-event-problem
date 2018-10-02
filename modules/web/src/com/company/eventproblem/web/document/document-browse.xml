@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.eventproblem.web.document.DocumentBrowse"
+        messagesPack="com.company.eventproblem.web.document">
+    <dsContext>
+        <groupDatasource id="documentsDs"
+                         class="com.company.eventproblem.entity.Document"
+                         view="_local">
+            <query>
+                <![CDATA[select e from eventproblem$Document e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true">
+        <tabSheet id="tabs"
+                  height="100%">
+            <tab id="firstTab"
+                 caption="First Tab"
+                 expand="income"
+                 margin="true,false,false,false"
+                 spacing="true">
+                <filter applyTo="income"
+                        datasource="documentsDs"/>
+                <hbox id="incomeHBox"
+                      spacing="true"
+                      width="70%"/>
+                <groupTable id="income"
+                            multiselect="true"
+                            width="100%">
+                    <actions>
+                        <action id="edit"
+                                openType="DIALOG"/>
+                        <action id="create"
+                                openType="DIALOG"/>
+                        <action id="remove"/>
+                        <action id="refresh"/>
+                    </actions>
+                    <columns>
+                        <column id="someText"/>
+                    </columns>
+                    <rows datasource="documentsDs"/>
+                    <rowsCount/>
+                    <buttonsPanel id="buttonsPanel"
+                                  alwaysVisible="true">
+                        <button id="createBtn"
+                                action="income.create"/>
+                        <button id="editBtn"
+                                action="income.edit"/>
+                        <button id="removeBtn"
+                                action="income.remove"/>
+                        <button id="refreshBtn"
+                                action="income.refresh"/>
+                    </buttonsPanel>
+                </groupTable>
+            </tab>
+        </tabSheet>
+    </layout>
+</window>
